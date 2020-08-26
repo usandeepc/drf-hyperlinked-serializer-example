@@ -1,7 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
 
 from myapp.models import Album, Track, Artist
-from myapp.serializers import ArtistSerializer, AlbumSerializer, TrackSerializer    # noqa: E501
+from myapp.serializers import (
+    ArtistSerializer,
+    AlbumSerializer,
+    TrackSerializer,
+)
 
 # Create your views here.
 

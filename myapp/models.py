@@ -14,7 +14,9 @@ class Artist(models.Model):
 class Album(models.Model):
     album_name = models.CharField(max_length=20)
     language = models.CharField(max_length=7)
-    artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE)   # noqa: E501
+    artist = models.ForeignKey(
+        Artist, related_name="albums", on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return self.album_name
@@ -23,7 +25,9 @@ class Album(models.Model):
 class Track(models.Model):
     track_name = models.CharField(max_length=20)
     track_order = models.IntegerField()
-    album = models.ForeignKey(Album, related_name='tracks', on_delete=models.CASCADE)    # noqa: E501
+    album = models.ForeignKey(
+        Album, related_name="tracks", on_delete=models.CASCADE
+    )
     duration = models.IntegerField()
 
     def __str__(self):

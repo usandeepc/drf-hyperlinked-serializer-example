@@ -4,6 +4,13 @@ from rest_framework.serializers import ModelSerializer
 from myapp.models import Album, Artist, Track
 
 
+class TrackSerializer(ModelSerializer):
+
+    class Meta:
+        model = Track
+        fields = "__all__"
+
+
 class AlbumSerializer(ModelSerializer):
     tracks = serializers.HyperlinkedRelatedField(
         many=True,
@@ -14,13 +21,6 @@ class AlbumSerializer(ModelSerializer):
     class Meta:
         model = Album
         fields = ['album_name', 'artist', 'tracks']
-
-
-class TrackSerializer(ModelSerializer):
-
-    class Meta:
-        model = Track
-        fields = "__all__"
 
 
 class ArtistSerializer(ModelSerializer):
