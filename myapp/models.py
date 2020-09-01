@@ -32,3 +32,8 @@ class Track(models.Model):
 
     def __str__(self):
         return self.track_name
+
+
+class Production_company(models.Model):
+    name = models.CharField(max_length=64)
+    addr = models.CharField(max_length=64)
